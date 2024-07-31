@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<style>
+
+</style>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}
+    	home
+    {% endblock %}
+</head>
+<body>
+{% block content %}
+
+    <br>
+    <br>
+{#    carrosel#}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<div class="container">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <img src="{% static 'images/carrosel.png' %}" alt="Los Angeles" style="width:100%; height: 600px">
+        <div class="carousel-caption">
+          <h3 style="color: black">Original Titan Gel (Tantra)</h3>
+          <p></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="{% static 'images/carrosel4.png' %}" alt="Chicago" style="width:100%; height: 500px">
+        <div class="carousel-caption">
+          <h3 style="color: black">Titan Gel (Gold)</h3>
+          <p></p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="{% static 'images/carrosel2.png' %}" alt="New York" style="width:100%; height: 450px">
+        <div class="carousel-caption">
+          <h3 style="color: black">Alpha Beast</h3>
+          <p></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients section-bg" style="padding-left: 100px" >
+      <div class="container">
+
+        <div class="row" data-aos="zoom-in">
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" style="margin-right: 50px">
+            <img src="{% static 'images/payment.png' %}" class="img-fluid" alt="" style=" width: 70px; height: 70px">
+             <p style="color: rgba(100,99,99,0.79); margin: 5px">Pay Before or Upon Delivery</p>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" style="margin-right: 50px">
+              <img src="{% static 'images/delivery.png' %}" class="img-fluid" alt="" style=" width: 70px; height: 70px">
+           <p style="color: rgba(100,99,99,0.79); margin: 20px">Nationwide Delivery</p>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" style="margin-right: 50px">
+            <img src="{% static 'images/time.png' %}" class="img-fluid" alt="" style="margin: 40px; width: 70px; height: 70px">
+           <p style="color: rgba(100,99,99,0.79); margin-right: 5px">Oparating 24hrs</p>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center" style="margin-right: 70px">
+            <img src="{% static 'images/notebook.png'%}" class="img-fluid" alt="" style="margin: 30px; width: 70px; height: 70px">
+           <p style="color: rgba(100,99,99,0.79); margin: 10px">Free Consultation</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Cliens Section -->
+
+
+<h1 class="head" style="text-align: center;margin-top: 5px; color: #008cff">PRODUCTS ON SALE</h1>
+
+<div class="row" style="margin: 5px 5px 5px;">
+        {% for omegameds in omegameds %}
+            <div class="col" style="padding: 20px;">
+          <div class="card">
+        <img  src="{{ omegameds.image.url }}" class="card-img-top" alt="" style="width: 200px">
+    <div class="card-body" style="width: 18rem;">
+    <h5 class="card-title">{{ omegameds.name }}</h5>
+    <p class="card-text">Ksh{{ omegameds.price }}</p>
+    <a href="https://www.whatsapp.com/download" class="btn btn-primary" style="width: 20rem;">Click to order via whatsapp</a>
+  </div>
+</div>
+            </div>
+            {% endfor %}
+            </div>
+
+{% endblock %}
+</body>
+ </html>

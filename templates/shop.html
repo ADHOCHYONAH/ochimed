@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+<style>
+    form{
+        margin-left: 200px;
+    }
+</style>
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h1 class="head" style="text-align: center;margin-top: 5px; color: #008cff">ALL PRODUCTS</h1>
+
+<div class="row" style="margin: 5px 5px 5px;">
+        {% for omegameds in omegameds %}
+            <div class="col" style="padding: 20px;">
+          <div class="card">
+        <img  src="{{ omegameds.image.url }}" class="card-img-top" alt="" style="width: 200px;position: relative">
+    <div class="card-body" style="width: 18rem;">
+    <h5 class="card-title">{{ omegameds.name }}</h5>
+    <p class="card-text">Ksh{{ omegameds.price }}</p>
+        <a href="">Read more</a>
+    <a href="https://www.whatsapp.com/download" class="btn btn-primary" style="width: 18rem;">Click to order via whatsapp</a>
+  </div>
+</div>
+            </div>
+            {% endfor %}
+            </div>
+
+
+
+{% endblock %}
