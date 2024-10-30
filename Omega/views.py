@@ -25,6 +25,12 @@ def shop(request):
     return render(request, 'shop.html', {'omegameds': omegameds})
 
 
+def Read(request):
+    omegameds = Omegameds.objects.all()
+
+    return render(request, 'Read_more.html', {'omegameds': omegameds})
+
+
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)

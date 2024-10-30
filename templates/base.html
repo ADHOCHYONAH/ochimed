@@ -256,10 +256,11 @@
             contact
           </a>
         </li>
+
            {% if user.is_authenticated %}
 
            <li class="nav-item ">
-          <a class="nav-link" href="/register" role="button" data-bs-toggle="" aria-expanded="false" style="margin-left: 90px;color: black;font-weight: bold">
+          <a class="nav-link" href="/register" role="button" data-bs-toggle="" aria-expanded="false" style="margin-left: 330px;color: black;font-weight: bold">
             <i class="fa fa-user-plus" aria-hidden="true" style="margin: 5px"></i>Signup
           </a>
         </li>
@@ -270,7 +271,7 @@
         </li>
                {% else %}
                         <li class="nav-item ">
-          <a class="nav-link" href="/logout/" role="button" data-bs-toggle="" aria-expanded="false" style="margin-left: 90px;color: black;font-weight: bold">
+          <a class="nav-link" href="home.html" role="button" data-bs-toggle="" aria-expanded="false" style="margin-left: 90px;color: black;font-weight: bold">
             <i class="fa fa-user-plus" aria-hidden="true" style="margin: 5px"></i>Log out
           </a>
         </li>
@@ -281,10 +282,10 @@
       </ul>
     </ul>
     </div>
+
 </nav>
 
 </header>
-
 
 <div class="row">
     {% block start %}
